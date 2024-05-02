@@ -77,7 +77,10 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-Model.destroy_all
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -169,11 +172,11 @@ actors.save
 
     #creating dynamic ids for the movies
 
-    batman_begins = Movie.find_by({"name" => "Batman Begins"})
+    batman_begins = Movie.find_by({"title" => "Batman Begins"})
 
-    dark_knight = Movie.find_by({"name" => "The Dark Knight"})
+    dark_knight = Movie.find_by({"title" => "The Dark Knight"})
 
-    dark_knight_rises = Movie.find_by({"name" => "The Dark Knight Rises"})
+    dark_knight_rises = Movie.find_by({"title" => "The Dark Knight Rises"})
 
     #creating dynamic ids for the actors
 
@@ -300,6 +303,13 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
+movies = Movie.all
+
+for film in movies
+    puts "#{film["title"]} #{film["year_released"]} #{film["rated"]} #{film["studio_id"]}"
+end
+
+
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
@@ -308,3 +318,9 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+roles = Role.all
+
+for line in roles
+    puts "#{line["movie_id"]} #{line["actor_id"]} #{line["character_name"]}"
+end
