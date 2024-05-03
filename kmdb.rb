@@ -85,7 +85,7 @@ Role.destroy_all
 # Generate models and tables, according to the domain model.
 # TODO!
 
-#done - generated and migrated
+    #done - generated and migrated
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
@@ -103,21 +103,21 @@ studios.save
 
 movies = Movie.new
 movies.title = "Batman Begins"
-movies.year_released = "2005"
+movies.year_released = 2005
 movies.rated = "PG-13"
 movies.studio_id = warner_bros["id"]
 movies.save
 
 movies = Movie.new
 movies.title = "The Dark Knight"
-movies.year_released = "2008"
+movies.year_released = 2008
 movies.rated = "PG-13"
 movies.studio_id = warner_bros["id"]
 movies.save
 
 movies = Movie.new
 movies.title = "The Dark Knight Rises"
-movies.year_released = "2012"
+movies.year_released = 2012
 movies.rated = "PG-13"
 movies.studio_id = warner_bros["id"]
 movies.save
@@ -304,7 +304,6 @@ puts ""
 # TODO!
 
 movies = Movie.all
-#studios = Studio.find_by({"id" => film["studio_id"]})
 
 for film in movies
         puts "#{film["title"]} #{film["year_released"]} #{film["rated"]} #{Studio.find_by("id" => film["studio_id"])["name"]}"
