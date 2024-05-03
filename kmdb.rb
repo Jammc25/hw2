@@ -230,7 +230,7 @@ roles.save
 roles = Role.new
 roles.movie_id = batman_begins["id"]
 roles.actor_id = oldman["id"]
-roles.character_name = "Comissioner Gordon"
+roles.character_name = "Commissioner Gordon"
 roles.save
 
 #The Dark Knight roles
@@ -274,7 +274,7 @@ roles.save
 roles = Role.new
 roles.movie_id = dark_knight_rises["id"]
 roles.actor_id = oldman["id"]
-roles.character_name = "Comissioner Gordon"
+roles.character_name = "Commissioner Gordon"
 roles.save
 
 roles = Role.new
